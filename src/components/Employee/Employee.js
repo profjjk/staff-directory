@@ -17,7 +17,7 @@ const Employee = () => {
   return employees.map(employee => (
     <div className="row py-2" id={employee.id} key={employee.id}
       style={{
-        background: (employee.id % 2 === 0) ? "#fff" : "f6f5f5"
+        background: employee.id % 2 === 0 ? "#fff" : "#f6f5f5"
       }}
     >
       <div className="col-2 d-flex">
