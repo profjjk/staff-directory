@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Employees from '../../employees.json';
 
 const style = {
   img: {
@@ -10,44 +11,44 @@ const style = {
   }
 }
 
-function Employee(props) {
-  return (
-    <div className="row py-2">
+const Employee = () => {
+  const [employees, setEmployees] = useState(Employees);
+
+  return employees.map(employee => (
+    <div className="row py-2" id={employee.id} key={employee.id}
+      style={{
+        background: (employee.id % 2 === 0) ? "#fff" : "f6f5f5"
+      }}
+    >
       <div className="col-2 d-flex">
         <img className="img-fluid rounded mx-auto"
           style={style.img}
-          // src={props.image}
-          // alt={props.name}
-          src={'img/lincoln.jpg'}
-          alt={'Abraham Lincoln'}
+          src={employee.image}
+          alt={employee.name}
         />
       </div>
       <div className="col-3 d-flex align-items-center justify-content-center">
         <p className="text-center" style={style.pg}>
-          {/* {props.name} */}
-          Abraham Lincoln
+          {employee.name}
         </p>
       </div>
       <div className="col-2 d-flex align-items-center justify-content-center">
         <p className="text-center" style={style.pg}>
-          {/* {props.phone} */}
-          (555) 123-4567
+          {employee.phone}
         </p>
       </div>
       <div className="col-3 d-flex align-items-center justify-content-center">
         <a className="text-center" href="#">
-          {/* {props.email} */}
-          abe@president.com
+          {employee.email}
         </a>
       </div>
       <div className="col-2 d-flex align-items-center justify-content-center">
         <p className="text-center" style={style.pg}>
-          {/* {props.dob} */}
-          03/04/1861
+          {employee.dob}
         </p>
       </div>
     </div>
-  )
+  ))
 }
 
 export default Employee;

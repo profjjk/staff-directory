@@ -5,12 +5,13 @@ import Search from './components/Search/Search';
 import Sort from './components/Sort/Sort';
 
 function App() {
-  const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
+  // const [employees, setEmployees] = useState(Employees);
+  // const [search, setSearch] = useState("");
+  // const [filter, setFilter] = useState("");
 
-  useEffect(() => {
-    
-  })
+  // useEffect(() => {
+
+  // })
 
   return (
     <div>
