@@ -1,9 +1,9 @@
 // DEPENDENCIES
 import React, { useState, useEffect } from 'react';
-import Employee from './components/Employee/Employee';
-import Header from './components/Header/Header';
-import Search from './components/Search/Search';
-import Sort from './components/Sort/Sort';
+import Employee from './components/Employee';
+import Header from './components/Header';
+import Search from './components/Search';
+import Sort from './components/Sort';
 import Employees from './utils/employees.json';
 
 function App() {
@@ -16,12 +16,12 @@ function App() {
   // Search for employees by name & watch for changes to search.
   useEffect(() => {
     if (search === "") {
+      setEmployees(Employees)
       return;
     }
-    console.log(search)
     let employeeSearch = [];
     for (let i = 0; i < Employees.length; i++) {
-      if (Employees[i].name.includes(search)) {
+      if (Employees[i].name.toLowerCase().includes(search.toLowerCase())) {
         employeeSearch.push(Employees[i]);
       };
     };
@@ -37,9 +37,7 @@ function App() {
   }, [sort])
 
   // Log employees & watch for changes to employees.
-  useEffect(() => {
-    console.log(employees)
-  }, [employees])
+  useEffect(() => {}, [employees])
 
   // FUNCTIONS
   // Get search term from input & update search.

@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 function Sort(props) {
   return (
@@ -7,8 +8,8 @@ function Sort(props) {
         <h6 className="text-center">Image</h6>
       </div>
       <div className="col-3">
-        <h6 className="text-center"
-          // onClick={event => }
+        <h6 className="text-center sort"
+          onClick={e => props.sortName(e)}
         >Name</h6>
       </div>
       <div className="col-2">
