@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Employees from '../../employees.json';
 
 const style = {
   img: {
@@ -11,10 +10,9 @@ const style = {
   }
 }
 
-const Employee = () => {
-  const [employees, setEmployees] = useState(Employees);
+const Employee = (props) => {
 
-  return employees.map(employee => (
+  return props.employees.map(employee => (
     <div className="row py-2" id={employee.id} key={employee.id}
       style={{
         background: employee.id % 2 === 0 ? "#fff" : "#f6f5f5"
