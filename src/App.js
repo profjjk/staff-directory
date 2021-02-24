@@ -17,7 +17,8 @@ function App() {
   useEffect(() => {
     if (search === "") {
       return;
-    } 
+    }
+    console.log(search)
     let employeeSearch = [];
     for (let i = 0; i < Employees.length; i++) {
       if (Employees[i].name.includes(search)) {

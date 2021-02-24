@@ -9,7 +9,7 @@ function Search(props) {
           type="text" 
           placeholder="Search by name"
           value={props.search} 
-          onChange={() => props.searchEmployees}
+          onChange={(e) => props.searchEmployees(e)}
         />
       </div>
     </div>
