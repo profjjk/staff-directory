@@ -40,9 +40,9 @@ function App() {
         let emp1 = name1.name.toLowerCase();
         let emp2 = name2.name.toLowerCase();
         if (emp1 < emp2) {
+          setCarrot('\u25BC')
           return -1;
         }
-        setCarrot('\u25BC')
         return 0;
       })
     }
@@ -51,13 +51,12 @@ function App() {
         let emp1 = name1.name.toLowerCase();
         let emp2 = name2.name.toLowerCase();
         if (emp1 > emp2) {
-          return 1;
+          setCarrot('\u25B2')
+          return -1;
         }
-        setCarrot('\u25B2')
         return 0;
       })
     }
-    console.log(sort)
   }, [sort, employees])
 
   // Get & update search.
