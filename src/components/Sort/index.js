@@ -2,6 +2,12 @@ import React from 'react';
 import './index.css';
 
 function Sort(props) {
+  
+  const handleClickSort = event => {
+    event.preventDefault();
+    (props.sort === "" || "desc") ? props.setSort("asc") : props.setSort("desc");
+  }
+
   return (
     <div className="row pt-2 mt-5 border">
       <div className="col-2">
@@ -9,8 +15,8 @@ function Sort(props) {
       </div>
       <div className="col-3">
         <h6 className="text-center sort"
-          onClick={e => props.sortName(e)}
-        >Name</h6>
+          onClick={e => handleClickSort(e)}
+        >Name <span>{props.carrot}</span></h6>
       </div>
       <div className="col-2">
         <h6 className="text-center">Phone</h6>
