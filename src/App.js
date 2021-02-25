@@ -55,7 +55,7 @@ function App() {
         setCarrot('\u25B2')
       })
     }
-  }, [sort, employees])
+  }, [sort])
 
   // Watch for changes to employees.
   useEffect(() => {}, [employees])
