@@ -5,7 +5,12 @@ function Sort(props) {
   
   const handleClickSort = event => {
     event.preventDefault();
-    (props.sort === "" || "desc") ? props.setSort("asc") : props.setSort("desc");
+    if (props.sort === "" || "desc") {
+      props.setSort("asc");
+    }
+    if (props.sort === "asc") {
+      props.setSort("desc")
+    }
   }
 
   return (

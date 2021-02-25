@@ -43,22 +43,22 @@ function App() {
           return -1;
         }
         setCarrot('\u25BC')
+        return 0;
       })
     }
     if (sort === "desc") {
       employees.sort((name1, name2) => {
         let emp1 = name1.name.toLowerCase();
         let emp2 = name2.name.toLowerCase();
-        if (emp1 < emp2) {
+        if (emp1 > emp2) {
           return 1;
         }
         setCarrot('\u25B2')
+        return 0;
       })
     }
-  }, [sort])
-
-  // Watch for changes to employees.
-  useEffect(() => {}, [employees])
+    console.log(sort)
+  }, [sort, employees])
 
   // Get & update search.
   const searchEmployees = event => {
